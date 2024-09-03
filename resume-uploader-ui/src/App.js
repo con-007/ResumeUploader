@@ -1,23 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
+
+import UploadResumeForm from './components/UploadResumeForm';
+import FetchResume from './components/FetchResume';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Resume Builder Demo</h1>
+      <br/>
+      <h2>Save Resume Details</h2>
+      <UploadResumeForm/>
+      <br/>
+      <hr/>
+      <h2>Fetch Resume Details</h2>
+      <FetchResume/>
     </div>
   );
 }
