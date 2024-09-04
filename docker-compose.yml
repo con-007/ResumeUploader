@@ -1,0 +1,43 @@
+services:
+  postgres:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: resumeuploads
+      POSTGRES_USER: mayankdubey
+      POSTGRES_PASSWORD: mayank@123
+    ports:
+      - "5432:5432"
+    networks:
+      - app-network
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  backend:
+    build: ./resume-uploader
+    ports:
+      - "8080:8080"
+    networks:
+      - app-network
+    depends_on:
+      - postgres
+    environment:
+      DB_NAME: resumeuploads
+      DB_USER: mayankdubey
+      DB_PASSWORD: mayank@123
+      DB_HOST: postgres
+
+  frontend:
+    build: ./resume-uploader-ui
+    ports:
+      - "3000:3000"
+    networks:
+      - app-network
+    depends_on:
+      - backend
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  postgres_data:
