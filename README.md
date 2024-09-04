@@ -41,11 +41,13 @@ You need to have the following installed/setup in your machine:
 
 ## Running the application locally
 To be able to run the application locally, make sure that:
+- In resume-uploader-ui/package.json, use `"proxy": "http://localhost:8080"`.
 - Node backend application is running (refer: resume-uploader/README)
 - ReactJS frontend development server is running (refer: resume-uploader-ui/README)
 
 
 ## Running the application using Docker
+- In resume-uploader-ui/package.json, use `"proxy": "http://backend:8080"`.
 - In the root directory (ResumeUploader), build and start the containers using:
   ```
   docker-compose up --build
