@@ -39,7 +39,16 @@ You need to have the following installed/setup in your machine:
 - PostgreSQL
 - Docker
 
-## Running the application
+## Running the application locally
 To be able to run the application locally, make sure that:
 - Node backend application is running (refer: resume-uploader/README)
 - ReactJS frontend development server is running (refer: resume-uploader-ui/README)
+
+
+## Running the application using Docker
+- In the root directory (ResumeUploader), build and start the containers using:
+  ```
+  docker-compose up --build
+  ```
+- You should be able to access the UI at http://localhost:3000 and backend at http://localhost:8080.
+
